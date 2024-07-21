@@ -35,4 +35,7 @@ public class OrderService {
         return orderRepository.save(upadatedOrder);
     }
 
+    public void deleteOrderById(Long id){
+        orderRepository.deleteById(id);
+    }
 }
