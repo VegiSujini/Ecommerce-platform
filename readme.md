@@ -1,58 +1,50 @@
-# Blogging Platform RESTful API
+# eCommerce Platform
 
-## Objective
-Create a RESTful API for managing blog posts and comments.
-
-## Features
-
-### Endpoints
-- **Posts**
-  - `GET /posts` - Retrieve all posts.
-  - `POST /posts` - Create a new post.
-  - `GET /posts/{id}` - Retrieve a specific post by ID.
-  - `PUT /posts/{id}` - Update a specific post by ID.
-  - `DELETE /posts/{id}` - Delete a specific post by ID.
-
-- **Comments**
-  - `GET /posts/{id}/comments` - Retrieve all comments for a specific post.
-  - `POST /posts/{id}/comments` - Add a comment to a specific post.
+This is a simple eCommerce platform that manages products, customers, and orders. The platform provides a RESTful API for interacting with these entities.
 
 ## Entities
-- **Post**
-  - `id` (Long)
-  - `title` (String)
-  - `content` (String)
-  - `author` (String)
-  - `createdDate` (LocalDateTime)
 
-- **Comment**
-  - `id` (Long)
-  - `postId` (Long)
-  - `content` (String)
-  - `author` (String)
-  - `createdDate` (LocalDateTime)
+- **Products**: Items available for purchase.
+- **Customers**: Users who can purchase products.
+- **Orders**: Records of products purchased by customers.
 
-## Steps
+## Endpoints
 
-### 1. Create Spring Boot Project
-Initialize a new Spring Boot project using [Spring Initializr](https://start.spring.io) with dependencies:
-- Spring Web
-- Spring Data JPA
-- MySQL Driver
+### Products
 
-### 2. Define Entities Post and Comment
-Define the entities `Post` and `Comment` to represent the data structure of the application.
+- **GET /products**: Retrieve a list of all products.
+- **POST /products**: Create a new product.
+- **GET /products/{id}**: Retrieve a specific product by its ID.
+- **PUT /products/{id}**: Update a specific product by its ID.
+- **DELETE /products/{id}**: Delete a specific product by its ID.
 
-### 3. Create Repositories PostRepository and CommentRepository
-Create `PostRepository` and `CommentRepository` interfaces to interact with the database.
+### Customers
 
-### 4. Implement Service Layer PostService and CommentService
-Implement service classes `PostService` and `CommentService` to handle business logic.
+- **GET /customers**: Retrieve a list of all customers.
+- **POST /customers**: Create a new customer.
+- **GET /customers/{id}**: Retrieve a specific customer by their ID.
+- **PUT /customers/{id}**: Update a specific customer by their ID.
+- **DELETE /customers/{id}**: Delete a specific customer by their ID.
 
-### 5. Create Controllers PostController and CommentController
-Create `PostController` and `CommentController` to handle incoming HTTP requests and map them to the corresponding service methods.
+### Orders
 
-### 6. Test the API
-Use Postman or a similar tool to test the API endpoints:
-- Verify that you can create, retrieve, update, and delete posts.
-- Verify that you can add and retrieve comments for a specific post.
+- **GET /orders**: Retrieve a list of all orders.
+- **POST /orders**: Create a new order.
+- **GET /orders/{id}**: Retrieve a specific order by its ID.
+- **PUT /orders/{id}**: Update a specific order by its ID.
+- **DELETE /orders/{id}**: Delete a specific order by its ID.
+
+## Getting Started
+
+### Prerequisites
+
+- [Java 11+](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
+- [Spring Boot](https://spring.io/projects/spring-boot)
+- [MySQL](https://www.mysql.com/)
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/VegiSujini/Ecommerce-platform.git
+   cd ecommerce-platform
